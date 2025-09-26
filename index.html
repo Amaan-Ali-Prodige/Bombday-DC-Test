@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Us</title>
+  <link rel="stylesheet" href="/assets/css/index.css">
+
+  <!-- Helvetica -->
+  <link href="https://fonts.cdnfonts.com/css/helvetica-neue-55" rel="stylesheet">
+  <!-- Museo Slab -->
+  <link href="https://fonts.cdnfonts.com/css/museo-slab" rel="stylesheet">
+  <style>
+    @font-face {
+      font-family: 'Museo Slab';
+      font-style: normal;
+      font-weight: 400;
+      src: local('Museo Slab'), url('https://fonts.cdnfonts.com/s/57462/Museo_Slab_300.woff') format('woff');
+    }
+
+    @font-face {
+      font-family: 'Helvetica Neue';
+      font-style: normal;
+      font-weight: 400;
+      src: local('Helvetica Neue'), url('https://fonts.cdnfonts.com/s/14188/HelveticaNeue.woff') format('woff');
+    }
+  </style>
+
+  <!-- Museo Slab alternative -->
+  <!-- <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Zilla+Slab:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap"
+    rel="stylesheet"> -->
+</head>
+
+<body class="r eference">
+  <header class="headerOuterWrapper">
+    <div class="container">
+      <div class="headerInnerWrapper" id="headerInnerWrapper">
+        <div class="logoWrapper">
+          <a href="#">logo</a>
+        </div>
+        <nav class="linksWrapper">
+          <a href="#">projects</a>
+          <a href="#">about</a>
+          <a href="#">nri area</a>
+          <a href="#">news & thoughts</a>
+          <a href="#">contact</a>
+        </nav>
+        <div class="hamburgerWrapper">
+          <img id="toggleNav" src="./assets/images/hamburger.svg" alt="hamburger" />
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="outerWrapper">
+      <div class="container">
+        <div class="innerWrapper">
+          <div class="lhs">
+            <h1>Contact Us</h1>
+            <p>When we aren’t changing landscapes,<br>we’re making headlines.</p>
+
+            <div class="formWrapper">
+              <a class="secondaryButton" href="javascript:;">Send us an Enquiry</a>
+              <form id="contactForm">
+                <img id="closeForm" class="closeForm closeBtn" src="https://www.svgrepo.com/show/12848/x-symbol.svg"
+                  alt="close form" srcset="" />
+                <input type="text" id="name" name="name" placeholder="Name" required>
+                <input type="email" id="email" name="email" placeholder="Email Address" required>
+                <input type="tel" id="mobile" name="mobile" placeholder="Mobile Number" required>
+                <div class="selectWrapper">
+                  <!-- <select name="query" required id="mainSelect">
+                    <button>
+                      <selectedcontent></selectedcontent>
+                    </button>
+                    <option value="" disabled placeholder selected>Query Type</option>
+                    <option value="projects">Projects</option>
+                    <option value="media">Media</option>
+                    <option value="career">Career</option>
+                  </select> -->
+                  <input type="text" name="query" required id="mainSelect" placeholder="Query Type" readonly>
+                  <ul class="dropdownList" id="mainSelectList">
+                    <li value="projects">Projects</li>
+                    <li value="media">Media</li>
+                    <li value="career">Career</li>
+                  </ul>
+                </div>
+                <div class="selectWrapper subSelectWrapper" id="subSelectWrapper">
+                  <!-- <select required id="subSelect">
+                    <option value="" disabled placeholder selected></option>
+                  </select> -->
+                  <input type="text" required id="subSelect" readonly>
+                  <ul class="dropdownList" id="subSelectList">
+                  </ul>
+                </div>
+                <button id="submitButton" type="submit" class="primaryButton">Send</button>
+              </form>
+            </div>
+          </div>
+          <div class="rhs">
+            <div class="map">
+              <p class="mapText">Lorem ipsum dolor sit amet - consetetur sadipscing elitr</p>
+            </div>
+            <p class="mapDetails">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy.</p>
+            <span class="small">
+              <a href="tel:+91 000 0000 000">+91 000 0000 000</a> |
+              <a href="mailto:test1@gmail.com">test1@gmail.com</a> |
+              <a href="mailto:test2@gmail.com">test2@gmail.com</a>
+            </span>
+
+            <a href="javascript:;" class="primaryButton" id="formHandler">Send us an Enquiry</a>
+
+            <span class="locationTitle">Sales Enquiry</span>
+            <span class="small">
+              <div>
+                <span class="sm">Phone</span>
+                <a href="tel:+91 000 0000 000">+91 000 0000 000</a>
+              </div>
+              <div>
+                <span class="sm">Email</span>
+                <a href="mailto:test1@gmail.com">test1@gmail.com</a>
+              </div>
+            </span>
+
+            <span class="locationTitle">Redevelopment Centre</span>
+            <span class="small">
+              <div>
+                <span class="sm">Phone</span>
+                <a href="tel:+91 000 0000 000">+91 000 0000 000</a>
+              </div>
+              <div>
+                <span class="sm">Email</span>
+                <a href="mailto:test2@gmail.com">test2@gmail.com</a>
+              </div>
+            </span>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footerOuterWrapper">
+    <div class="primaryFooterOuterWrapper">
+      <div class="container">
+        <div class="primaryFooterInnerWrapper">
+          <div class="lhs">
+            <div class="logoWrapper">
+              <a href="#">logo</a>
+            </div>
+            <div class="linksWrapper">
+              <ul>
+                <li>
+                  <a>Projects</a>
+                </li>
+                <li>
+                  <a>About</a>
+                </li>
+                <li>
+                  <a>NRI Area</a>
+                </li>
+                <li>
+                  <a>News & Thoughts</a>
+                </li>
+                <li>
+                  <a>Employee Corner</a>
+                </li>
+                <li>
+                  <a>CSR</a>
+                </li>
+                <li>
+                  <a>Contact</a>
+                </li>
+                <li>
+                  <a>Disclaimer</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="rhs">
+            <div class="newsLetter">
+              <span>
+                Get the latest news
+              </span>
+              <form id="footerForm">
+                <input type="email" id="footerEmail" placeholder="Enter email" required>
+                <button type="submit" class="primaryButton" id="footerSubmitButton">Subscribe</button>
+              </form>
+            </div>
+            <div class="toTopWrapper fixed">
+              <a href="javascript:;" class="toTop" id="toTop">
+                <img src="./assets/images/to-top.svg" alt="scroll to top arrow">
+                To the top
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="secondaryFooterOuterWrapper">
+      <div class="container">
+        <div class="secondaryFooterInnerWrapper">
+          <span class="secondaryChild details">An ISO 9001:2008 Certified Company</span>
+          <div>
+            <span class="secondaryChild copyright">© copyrights 2019</span>
+            <span class="secondaryChild socials">
+              <a href="http://facebook.com">
+                <img src="./assets/images/socials.svg" alt="facebook" srcset="">
+              </a>
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+
+  <script src="./assets/js/index.js"></script>
+</body>
+
+</html>
