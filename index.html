@@ -57,6 +57,12 @@
   </header>
 
   <main>
+    <div id="popup">
+      <div class="popupContent">
+        <img src="./assets/images/close-x.svg" alt="close" class="close" id="closePopup">
+        <span id="popupMessage"></span>
+      </div>
+    </div>
     <section class="outerWrapper">
       <div class="container">
         <div class="innerWrapper">
@@ -67,7 +73,7 @@
             <div class="formWrapper">
               <a class="secondaryButton" href="javascript:;">Send us an Enquiry</a>
               <form id="contactForm">
-                <img id="closeForm" class="closeForm closeBtn" src="https://www.svgrepo.com/show/12848/x-symbol.svg"
+                <img id="closeForm" class="closeForm closeBtn" src="./assets/images/close-x.svg"
                   alt="close form" srcset="" />
                 <input type="text" id="name" name="name" placeholder="Name" required>
                 <input type="email" id="email" name="email" placeholder="Email Address" required>
@@ -93,7 +99,7 @@
                   <!-- <select required id="subSelect">
                     <option value="" disabled placeholder selected></option>
                   </select> -->
-                  <input type="text" required id="subSelect" readonly>
+                  <input type="text" name="subQuery" required id="subSelect" readonly>
                   <ul class="dropdownList" id="subSelectList">
                   </ul>
                 </div>
@@ -154,28 +160,28 @@
             <div class="linksWrapper">
               <ul>
                 <li>
-                  <a>Projects</a>
+                  <a href="javascript:;">Projects</a>
                 </li>
                 <li>
-                  <a>About</a>
+                  <a href="javascript:;">About</a>
                 </li>
                 <li>
-                  <a>NRI Area</a>
+                  <a href="javascript:;">NRI Area</a>
                 </li>
                 <li>
-                  <a>News & Thoughts</a>
+                  <a href="javascript:;">News & Thoughts</a>
                 </li>
                 <li>
-                  <a>Employee Corner</a>
+                  <a href="javascript:;">Employee Corner</a>
                 </li>
                 <li>
-                  <a>CSR</a>
+                  <a href="javascript:;">CSR</a>
                 </li>
                 <li>
-                  <a>Contact</a>
+                  <a href="javascript:;">Contact</a>
                 </li>
                 <li>
-                  <a>Disclaimer</a>
+                  <a href="javascript:;">Disclaimer</a>
                 </li>
               </ul>
             </div>
@@ -208,7 +214,19 @@
             <span class="secondaryChild copyright">© copyrights 2019</span>
             <span class="secondaryChild socials">
               <a href="http://facebook.com">
-                <img src="./assets/images/socials.svg" alt="facebook" srcset="">
+                <img src="./assets/images/facebook.png" alt="facebook" srcset="">
+              </a>
+              <a href="http://instagram.com">
+                <img src="./assets/images/instagram.png" alt="instagram" srcset="">
+              </a>
+              <a href="http://linkedin.com">
+                <img src="./assets/images/linkedin.png" alt="linkedin" srcset="">
+              </a>
+              <a href="http://twitter.com">
+                <img src="./assets/images/twitter.png" alt="twitter" srcset="">
+              </a>
+              <a href="http://youtube.com">
+                <img src="./assets/images/youtube.png" alt="youtube" srcset="">
               </a>
             </span>
           </div>

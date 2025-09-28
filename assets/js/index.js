@@ -1,4 +1,9 @@
 let body = document.body
+let popup = document.getElementById('popup')
+// popup.addEventListener('click', () => popup.classList.remove('active'))
+let popupMessage = document.getElementById('popupMessage')
+let closePopup = document.getElementById('closePopup')
+closePopup.addEventListener('click', () => popup.classList.remove('active'))
 
 let formElement = document.getElementById('contactForm')
 let mainSelect = document.getElementById('mainSelect')
@@ -10,11 +15,20 @@ let nameInput = document.getElementById('name')
 let emailInput = document.getElementById('email')
 let mobileInput = document.getElementById('mobile')
 let submitButton = document.getElementById('submitButton')
-let primaryForm = {}
+let primaryForm = {
+  name: '',
+  email: '',
+  mobile: '',
+  mainSelect: '',
+  subSelect: ''
+}
 
 let footerFormElement = document.getElementById('footerForm')
 let footerEmail = document.getElementById('footerEmail')
-let footerForm = {}
+let footerSubmitButton = document.getElementById('footerSubmitButton')
+let footerForm = {
+  footerEmail: ''
+}
 let toTop = document.getElementById('toTop')
 
 let formHandler = document.getElementById('formHandler')
@@ -39,6 +53,7 @@ const primarySelectHandler = e => {
 }
 
 const primaryInputHandler = e => {
+  e.target.classList.remove('error')
   primaryForm = {
     ...primaryForm,
     [e.target.id]: e.target.value
@@ -50,6 +65,7 @@ const primarySelectToggle = e => {
   //   element.classList.remove('open')
   // })
   e.target.parentElement.classList.toggle('open')
+  e.target.classList.remove('error')
 }
 
 const primarySelectListHandler = e => {
@@ -96,16 +112,42 @@ const primarySubSelectListHandler = e => {
   }
 }
 
+const paramCheck = obj => {
+  let params = Object.keys(obj)
+  let flag = true
+  params.forEach(param => {
+    if (flag && obj[param].length <= 0) {
+      flag = false
+      document.getElementById(param).classList.add('error')
+      let content = `${param} is empty`
+      popup.classList.add('active')
+      popupMessage.innerHTML = content
+    }
+  })
+  return flag
+}
+
 const primarySubmitHandler = e => {
   e.preventDefault()
-  console.log(primaryForm)
-  formElement.reset()
-  subSelectWrapper.classList.remove('active')
-  primaryForm = {}
-  closeFormFunc()
+  if (!paramCheck(primaryForm)) return
+  let content = `
+  <p>Thank you for getting in touch ${primaryForm.name}!</p>
+  <p>We’ve received your enquiry regarding ${primaryForm.mainSelect} and one of our team members will get back to you as soon as possible.</p>
+  <p>A confirmation has also been sent to your email address at ${primaryForm.email}. We appreciate your patience and look forward to assisting you.</p>`
+  e.target.classList.add('loading')
+  setTimeout(() => {
+    popup.classList.add('active')
+    popupMessage.innerHTML = content
+    e.target.classList.remove('loading')
+    primaryForm = {}
+    formElement.reset()
+    subSelectWrapper.classList.remove('active')
+    closeFormFunc()
+  }, 2000)
 }
 
 const footerInputHandler = e => {
+  e.target.classList.remove('error')
   footerForm = {
     ...footerForm,
     [e.target.id]: e.target.value
@@ -115,9 +157,16 @@ const footerInputHandler = e => {
 
 const footerSubmitHandler = e => {
   e.preventDefault()
-  console.log(footerForm)
-  footerForm = {}
-  footerFormElement.reset()
+  if (!paramCheck(footerForm)) return
+  let content = `Thank u for subscribing to our newsletter, it will be sent to ur email at ${footerForm.footerEmail} shortly!`
+  e.target.classList.add('loading')
+  setTimeout(() => {
+    popup.classList.add('active')
+    popupMessage.innerHTML = content
+    e.target.classList.remove('loading')
+    footerForm = {}
+    footerFormElement.reset()
+  }, 2000)
 }
 
 const scrollHandler = () => {
@@ -156,10 +205,10 @@ for (let i = 0; i < mainSelectList.children.length; i++) {
 }
 subSelect.addEventListener('click', primarySelectToggle)
 // subSelect.addEventListener('change', primarySelectHandler)
-formElement.addEventListener('submit', primarySubmitHandler)
+submitButton.addEventListener('click', () => primarySubmitHandler(event))
 
 footerEmail.addEventListener('change', footerInputHandler)
-footerFormElement.addEventListener('submit', footerSubmitHandler)
+footerSubmitButton.addEventListener('click', () => footerSubmitHandler(event))
 
 formHandler.addEventListener('click', showFormFunc)
 closeForm.addEventListener('click', closeFormFunc)

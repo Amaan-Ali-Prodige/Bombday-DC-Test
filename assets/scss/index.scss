@@ -72,6 +72,7 @@ body {
 	text-align: center;
 	display: flex;
 	justify-content: center;
+	align-items: center;
 	text-decoration: none;
 	align-items: center;
 	background: #3971b1;
@@ -82,8 +83,26 @@ body {
 	border: none;
 	cursor: pointer;
 	transition: ease-in-out 0.5s all;
+	position: relative;
 	&:hover {
 		transform: scaleX(1.05);
+	}
+	&:after {
+		position: absolute;
+		content: '';
+		display: none;
+		background: url('../images/loader.webp') no-repeat center center;
+		width: 20px;
+		height: 20px;
+		right: 15px;
+		background-size: contain;
+		filter: brightness(4);
+	}
+	&.loading {
+		background: gray;
+		&:after {
+			display: flex;
+		}
 	}
 }
 
@@ -98,6 +117,49 @@ body {
 
 input {
 	font-family: var(--font-family-helvetica);
+	&.error {
+		outline: 1px solid red !important;
+		border-radius: 6px;
+	}
+}
+
+#popup {
+	display: none;
+	position: fixed;
+	height: 100vh;
+	width: 100vw;
+	background: rgba(0, 0, 0, 0.5);
+	top: 0;
+	left: 0;
+	&.active {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		z-index: 10;
+	}
+	.popupContent {
+		position: relative;
+		background: white;
+		padding: 50px 100px;
+		min-width: 350px;
+		border-radius: 8px;
+		position: absolute;
+		top: 20%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		text-align: center;
+		font-size: 24px;
+		line-height: 36px;
+		color: #383838;
+		.close {
+			position: absolute;
+			cursor: pointer;
+			top: 10px;
+			right: 10px;
+			height: 30px;
+			width: 30px;
+		}
+	}
 }
 
 header {
@@ -117,7 +179,7 @@ header {
 			a {
 				// margin-right: 50px;
 				margin-right: 46px;
-
+				position: relative;
 				letter-spacing: 0.26px;
 				line-height: 15px;
 				font-weight: 600;
@@ -126,9 +188,21 @@ header {
 				color: #3c3c3c;
 				font-size: 13px;
 				transition: ease-in-out 0.5s all;
+				&:after {
+					content: '';
+					position: absolute;
+					bottom: -2px;
+					left: 50%;
+					transform: translateX(-50%);
+					width: 0;
+					transition: inherit;
+					height: 1px;
+					background: #3971b1;
+				}
 				&:hover {
-					letter-spacing: 1.5px;
-					margin: 0 -1.5px;
+					&:after {
+						width: 100%;
+					}
 				}
 				&:last-child {
 					margin-right: 0;
@@ -162,7 +236,7 @@ main {
 					position: absolute;
 					background: #f0f0f0;
 					right: 0;
-					top: 0;
+					top: 60px;
 					height: 954px;
 					width: 1px;
 				}
@@ -235,15 +309,18 @@ main {
 								}
 							}
 						}
-						button {
-							margin-top: 32px;
-						}
+						// button {
+						// 	margin-top: 32px;
+						// }
 						.selectWrapper {
 							position: relative;
 							width: 100%;
 							margin-bottom: 0;
 							padding: 0;
 							border: none;
+							&:nth-last-child(2) {
+								margin-bottom: 32px;
+							}
 							&:after {
 								content: '';
 								position: absolute;
@@ -393,6 +470,7 @@ main {
 						background-size: contain;
 						top: 415px;
 						left: 253px;
+						animation: breathe 2.8s ease-in-out infinite;
 						// transform: translate(-50%, -100%);
 					}
 					.mapText {
@@ -510,6 +588,24 @@ footer {
 								font-family: inherit;
 								text-decoration: none;
 								color: inherit;
+								position: relative;
+								transition: ease-in-out 0.5s all;
+								&:after {
+									content: '';
+									position: absolute;
+									bottom: -2px;
+									left: 50%;
+									transform: translateX(-50%);
+									width: 0;
+									transition: inherit;
+									height: 1px;
+									background: #3971b1;
+								}
+								&:hover {
+									&:after {
+										width: 100%;
+									}
+								}
 							}
 						}
 					}
@@ -631,6 +727,21 @@ footer {
 					a {
 						display: flex;
 						align-items: center;
+						margin-right: 13px;
+						position: relative;
+						transition: ease-in-out 0.5s all;
+						&:last-child {
+							margin-right: 0;
+						}
+						> img {
+							height: 18px;
+							transition: inherit;
+							&:hover {
+								filter: brightness(0) saturate(100%) invert(36%) sepia(30%)
+									saturate(1578%) hue-rotate(182deg) brightness(91%)
+									contrast(85%);
+							}
+						}
 					}
 				}
 			}
@@ -808,6 +919,16 @@ footer {
 		--container-width: 580px;
 	}
 
+	#popup {
+		&.active {
+		}
+		.popupContent {
+			padding: 20px 40px;
+			font-size: 14px;
+			.close {
+			}
+		}
+	}
 	.logoWrapper {
 		a {
 			background: #e4e4e4;
@@ -1158,5 +1279,19 @@ footer {
 				}
 			}
 		}
+	}
+}
+
+@keyframes breathe {
+	0%,
+	100% {
+		transform: scale(1);
+		opacity: 1;
+		filter: drop-shadow(0 0 0 rgba(57, 113, 177, 0));
+	}
+	50% {
+		transform: scale(1.12);
+		opacity: 0.88;
+		filter: drop-shadow(0 0 12px rgba(57, 113, 177, 0.18));
 	}
 }
