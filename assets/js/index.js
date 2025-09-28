@@ -118,10 +118,11 @@ const paramCheck = obj => {
   params.forEach(param => {
     if (flag && obj[param].length <= 0) {
       flag = false
-      document.getElementById(param).classList.add('error')
       let content = `${param} is empty`
       popup.classList.add('active')
       popupMessage.innerHTML = content
+      document.getElementById(param).classList.add('error')
+      // document.getElementById(param).focus()
     }
   })
   return flag

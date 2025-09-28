@@ -970,7 +970,7 @@ footer .secondaryFooterOuterWrapper .secondaryFooterInnerWrapper .secondaryChild
 				height: 1px;
 				width: 100%;
 				bottom: 0;
-				left: 0;
+				right: 0;
 		}
 		header .headerInnerWrapper .linksWrapper a:last-child:after {
 				display: none;
@@ -982,7 +982,6 @@ footer .secondaryFooterOuterWrapper .secondaryFooterInnerWrapper .secondaryChild
 		}
 		main {
 				margin-top: 0;
-				margin-bottom: 0;
 				margin-bottom: 25px;
 		}
 		main .outerWrapper .innerWrapper .lhs {

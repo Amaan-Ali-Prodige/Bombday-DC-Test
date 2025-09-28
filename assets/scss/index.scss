@@ -983,7 +983,7 @@ footer {
 						height: 1px;
 						width: 100%;
 						bottom: 0;
-						left: 0;
+						right: 0;
 					}
 					&:last-child {
 						&:after {
@@ -1000,7 +1000,6 @@ footer {
 
 	main {
 		margin-top: 0;
-		margin-bottom: 0;
 		margin-bottom: 25px;
 		.outerWrapper {
 			.innerWrapper {
