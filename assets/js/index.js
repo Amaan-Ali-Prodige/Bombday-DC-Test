@@ -1,9 +1,7 @@
 let body = document.body
 let popup = document.getElementById('popup')
-// popup.addEventListener('click', () => popup.classList.remove('active'))
 let popupMessage = document.getElementById('popupMessage')
 let closePopup = document.getElementById('closePopup')
-closePopup.addEventListener('click', () => popup.classList.remove('active'))
 
 let formElement = document.getElementById('contactForm')
 let mainSelect = document.getElementById('mainSelect')
@@ -35,6 +33,18 @@ let formHandler = document.getElementById('formHandler')
 let closeForm = document.getElementById('closeForm')
 
 let toggleNav = document.getElementById('toggleNav')
+
+const openPopupFunc = content => {
+  popup.classList.add('active')
+  popupMessage.innerHTML = content
+  body.classList.add('noScroll')
+}
+
+const closePopupFunc = () => {
+  popup.classList.remove('active')
+  popupMessage.innerHTML = ''
+  body.classList.remove('noScroll')
+}
 
 const primarySelectHandler = e => {
   let selectedValue = e.target.value
@@ -119,8 +129,7 @@ const paramCheck = obj => {
     if (flag && obj[param].length <= 0) {
       flag = false
       let content = `${param} is empty`
-      popup.classList.add('active')
-      popupMessage.innerHTML = content
+      openPopupFunc(content)
       document.getElementById(param).classList.add('error')
       // document.getElementById(param).focus()
     }
@@ -137,8 +146,7 @@ const primarySubmitHandler = e => {
   <p>A confirmation has also been sent to your email address at ${primaryForm.email}. We appreciate your patience and look forward to assisting you.</p>`
   e.target.classList.add('loading')
   setTimeout(() => {
-    popup.classList.add('active')
-    popupMessage.innerHTML = content
+    openPopupFunc(content)
     e.target.classList.remove('loading')
     primaryForm = {}
     formElement.reset()
@@ -162,8 +170,7 @@ const footerSubmitHandler = e => {
   let content = `Thank u for subscribing to our newsletter, it will be sent to ur email at ${footerForm.footerEmail} shortly!`
   e.target.classList.add('loading')
   setTimeout(() => {
-    popup.classList.add('active')
-    popupMessage.innerHTML = content
+    openPopupFunc(content)
     e.target.classList.remove('loading')
     footerForm = {}
     footerFormElement.reset()
@@ -215,3 +222,5 @@ formHandler.addEventListener('click', showFormFunc)
 closeForm.addEventListener('click', closeFormFunc)
 
 toggleNav.addEventListener('click', toggleNavFunc)
+
+closePopup.addEventListener('click', closePopupFunc)

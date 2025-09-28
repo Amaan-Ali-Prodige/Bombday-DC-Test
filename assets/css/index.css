@@ -935,6 +935,8 @@ footer .secondaryFooterOuterWrapper .secondaryFooterInnerWrapper .secondaryChild
 				bottom: 0;
 				-webkit-transform: translateY(100%);
 				        transform: translateY(100%);
+				-webkit-filter: drop-shadow(0px 28px 15px #bdbdbd);
+				        filter: drop-shadow(0px 28px 15px #bdbdbd);
 		}
 		header .headerInnerWrapper .linksWrapper {
 				position: absolute;
@@ -960,7 +962,7 @@ footer .secondaryFooterOuterWrapper .secondaryFooterInnerWrapper .secondaryChild
 		header .headerInnerWrapper .linksWrapper a {
 				position: relative;
 				margin: 0;
-				width: 80%;
+				width: calc(0.9 * var(--container-width));
 				padding: 20px 0;
 		}
 		header .headerInnerWrapper .linksWrapper a:after {
