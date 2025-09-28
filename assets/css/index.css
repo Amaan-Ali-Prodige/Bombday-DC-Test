@@ -762,7 +762,7 @@ footer .secondaryFooterOuterWrapper .secondaryFooterInnerWrapper {
 		padding: 20px 0;
 }
 footer .secondaryFooterOuterWrapper .secondaryFooterInnerWrapper > div {
-		width: 57.5%;
+		width: 57%;
 		display: -webkit-box;
 		display: -ms-flexbox;
 		display: flex;
