@@ -1147,6 +1147,9 @@ footer .secondaryFooterOuterWrapper .secondaryFooterInnerWrapper .secondaryChild
 		footer .primaryFooterOuterWrapper .primaryFooterInnerWrapper .rhs {
 				margin-bottom: 47px;
 		}
+		footer .primaryFooterOuterWrapper .primaryFooterInnerWrapper .rhs .toTopWrapper .toTop img {
+				border: 1px solid white;
+		}
 		footer .primaryFooterOuterWrapper .primaryFooterInnerWrapper .rhs .newsLetter {
 				padding: 0;
 				width: 100%;
