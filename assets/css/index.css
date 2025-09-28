@@ -124,7 +124,7 @@ input {
 		font-family: var(--font-family-helvetica);
 }
 input.error {
-		outline: 1px solid red !important;
+		border: 1px solid red !important;
 		border-radius: 6px;
 }
 
