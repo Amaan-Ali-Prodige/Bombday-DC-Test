@@ -1,8 +1,7 @@
 :root {
-	// --primary-color: #2a64b8;
-	// --secondary-color: #3971b1;
 	// --light-color: #f4f4f4;
-	// --dark-color: #3c3c3c;
+	--dark-color: #3c3c3c;
+	--primary-color: #3971b1;
 	--font-family-museo: 'Museo Slab', sans-serif;
 	--font-family-helvetica: 'Helvetica Neue', sans-serif;
 }
@@ -39,7 +38,7 @@ body {
 		background: transparent;
 	}
 	&::-webkit-scrollbar-thumb {
-		background: #3971b1;
+		background: var(--primary-color);
 	}
 	&::-webkit-scrollbar-track {
 		background: #fafafa;
@@ -75,7 +74,7 @@ body {
 	align-items: center;
 	text-decoration: none;
 	align-items: center;
-	background: #3971b1;
+	background: var(--primary-color);
 	color: #fff;
 	font-size: 12px;
 	line-height: 14px;
@@ -107,7 +106,7 @@ body {
 }
 
 .secondaryButton {
-	color: #3971b1;
+	color: var(--primary-color);
 	font-size: 26px;
 	line-height: 54px;
 	font-weight: 300;
@@ -197,7 +196,7 @@ header {
 					width: 0;
 					transition: inherit;
 					height: 1px;
-					background: #3971b1;
+					background: var(--primary-color);
 				}
 				&:hover {
 					&:after {
@@ -300,7 +299,7 @@ main {
 						input {
 							&:focus,
 							&:hover {
-								border-bottom: 1px solid #3971b1;
+								border-bottom: 1px solid var(--primary-color);
 							}
 							&:focus {
 								color: #383838;
@@ -359,7 +358,7 @@ main {
 									background: transparent;
 								}
 								&::-webkit-scrollbar-thumb {
-									background: #3971b1;
+									background: var(--primary-color);
 								}
 								&::-webkit-scrollbar-track {
 									background: #fafafa;
@@ -376,7 +375,7 @@ main {
 									cursor: pointer;
 									transition: ease-in-out 0.5s all;
 									&:hover {
-										border-bottom: 1px solid #3971b1;
+										border-bottom: 1px solid var(--primary-color);
 									}
 									&:after {
 										content: '';
@@ -512,7 +511,7 @@ main {
 						border-bottom: 1px solid transparent;
 						transition: ease-in-out 0.5s all;
 						&:hover {
-							border-bottom: 1px solid #3971b1;
+							border-bottom: 1px solid var(--primary-color);
 						}
 					}
 					> div {
@@ -526,7 +525,7 @@ main {
 				.locationTitle {
 					// margin-bottom: 30px;
 					margin-bottom: 27px;
-					color: #3971b1;
+					color: var(--primary-color);
 					font-size: 26px;
 					line-height: 24px;
 				}
@@ -599,7 +598,7 @@ footer {
 									width: 0;
 									transition: inherit;
 									height: 1px;
-									background: #3971b1;
+									background: var(--primary-color);
 								}
 								&:hover {
 									&:after {
@@ -641,7 +640,7 @@ footer {
 							border-bottom: 1px solid transparent;
 							&:focus,
 							&:hover {
-								border-bottom: 1px solid #3971b1;
+								border-bottom: 1px solid var(--primary-color);
 							}
 						}
 						button {
@@ -931,12 +930,12 @@ footer {
 	}
 	.logoWrapper {
 		a {
-			background: #e4e4e4;
 			padding: 10px 24px;
 			font-weight: 500;
-			text-transform: uppercase;
-			text-decoration: none;
-			color: #3c3c3c;
+			// background: #e4e4e4;
+			// text-transform: uppercase;
+			// text-decoration: none;
+			// color: #3c3c3c;
 			font-size: 13px;
 			line-height: 15px;
 			letter-spacing: 0.26px;

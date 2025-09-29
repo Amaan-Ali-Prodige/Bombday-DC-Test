@@ -1,4 +1,6 @@
 :root {
+		--dark-color: #3c3c3c;
+		--primary-color: #3971b1;
 		--font-family-museo: "Museo Slab", sans-serif;
 		--font-family-helvetica: "Helvetica Neue", sans-serif;
 }
@@ -37,7 +39,7 @@ body::-webkit-scrollbar {
 		background: transparent;
 }
 body::-webkit-scrollbar-thumb {
-		background: #3971b1;
+		background: var(--primary-color);
 }
 body::-webkit-scrollbar-track {
 		background: #fafafa;
@@ -75,7 +77,7 @@ body::-webkit-scrollbar-track {
 		        align-items: center;
 		text-decoration: none;
 		align-items: center;
-		background: #3971b1;
+		background: var(--primary-color);
 		color: #fff;
 		font-size: 12px;
 		line-height: 14px;
@@ -112,7 +114,7 @@ body::-webkit-scrollbar-track {
 }
 
 .secondaryButton {
-		color: #3971b1;
+		color: var(--primary-color);
 		font-size: 26px;
 		line-height: 54px;
 		font-weight: 300;
@@ -216,7 +218,7 @@ header .headerInnerWrapper .linksWrapper a:after {
 		-webkit-transition: inherit;
 		transition: inherit;
 		height: 1px;
-		background: #3971b1;
+		background: var(--primary-color);
 }
 header .headerInnerWrapper .linksWrapper a:hover:after {
 		width: 100%;
@@ -332,7 +334,7 @@ main .outerWrapper .innerWrapper .lhs .formWrapper form input::placeholder {
 main .outerWrapper .innerWrapper .lhs .formWrapper form select:focus, main .outerWrapper .innerWrapper .lhs .formWrapper form select:hover,
 main .outerWrapper .innerWrapper .lhs .formWrapper form input:focus,
 main .outerWrapper .innerWrapper .lhs .formWrapper form input:hover {
-		border-bottom: 1px solid #3971b1;
+		border-bottom: 1px solid var(--primary-color);
 }
 main .outerWrapper .innerWrapper .lhs .formWrapper form select:focus,
 main .outerWrapper .innerWrapper .lhs .formWrapper form input:focus {
@@ -406,7 +408,7 @@ main .outerWrapper .innerWrapper .lhs .formWrapper form .selectWrapper .dropdown
 		background: transparent;
 }
 main .outerWrapper .innerWrapper .lhs .formWrapper form .selectWrapper .dropdownList::-webkit-scrollbar-thumb {
-		background: #3971b1;
+		background: var(--primary-color);
 }
 main .outerWrapper .innerWrapper .lhs .formWrapper form .selectWrapper .dropdownList::-webkit-scrollbar-track {
 		background: #fafafa;
@@ -425,7 +427,7 @@ main .outerWrapper .innerWrapper .lhs .formWrapper form .selectWrapper .dropdown
 		transition: ease-in-out 0.5s all;
 }
 main .outerWrapper .innerWrapper .lhs .formWrapper form .selectWrapper .dropdownList li:hover {
-		border-bottom: 1px solid #3971b1;
+		border-bottom: 1px solid var(--primary-color);
 }
 main .outerWrapper .innerWrapper .lhs .formWrapper form .selectWrapper .dropdownList li:after {
 		content: "";
@@ -553,7 +555,7 @@ main .outerWrapper .innerWrapper .rhs .small a {
 		transition: ease-in-out 0.5s all;
 }
 main .outerWrapper .innerWrapper .rhs .small a:hover {
-		border-bottom: 1px solid #3971b1;
+		border-bottom: 1px solid var(--primary-color);
 }
 main .outerWrapper .innerWrapper .rhs .small > div {
 		display: -webkit-box;
@@ -568,7 +570,7 @@ main .outerWrapper .innerWrapper .rhs .small > div .sm {
 }
 main .outerWrapper .innerWrapper .rhs .locationTitle {
 		margin-bottom: 27px;
-		color: #3971b1;
+		color: var(--primary-color);
 		font-size: 26px;
 		line-height: 24px;
 }
@@ -649,7 +651,7 @@ footer .primaryFooterOuterWrapper .primaryFooterInnerWrapper .lhs .linksWrapper 
 		-webkit-transition: inherit;
 		transition: inherit;
 		height: 1px;
-		background: #3971b1;
+		background: var(--primary-color);
 }
 footer .primaryFooterOuterWrapper .primaryFooterInnerWrapper .lhs .linksWrapper ul li a:hover:after {
 		width: 100%;
@@ -691,7 +693,7 @@ footer .primaryFooterOuterWrapper .primaryFooterInnerWrapper .rhs .newsLetter fo
 		border-bottom: 1px solid transparent;
 }
 footer .primaryFooterOuterWrapper .primaryFooterInnerWrapper .rhs .newsLetter form input:focus, footer .primaryFooterOuterWrapper .primaryFooterInnerWrapper .rhs .newsLetter form input:hover {
-		border-bottom: 1px solid #3971b1;
+		border-bottom: 1px solid var(--primary-color);
 }
 footer .primaryFooterOuterWrapper .primaryFooterInnerWrapper .rhs .newsLetter form button {
 		max-width: 130px;
@@ -908,12 +910,8 @@ footer .secondaryFooterOuterWrapper .secondaryFooterInnerWrapper .secondaryChild
 				font-size: 14px;
 		}
 		.logoWrapper a {
-				background: #e4e4e4;
 				padding: 10px 24px;
 				font-weight: 500;
-				text-transform: uppercase;
-				text-decoration: none;
-				color: #3c3c3c;
 				font-size: 13px;
 				line-height: 15px;
 				letter-spacing: 0.26px;
